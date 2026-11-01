@@ -1,0 +1,16 @@
+{
+  "name": "Terraforge — Explore · Discover · Mine",
+  "short_name": "Terraforge",
+  "description": "A voxel geoscience field adventure: build, survive the night, and take a mineral from desk study to mine closure.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0a1016",
+  "theme_color": "#0f1620",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
