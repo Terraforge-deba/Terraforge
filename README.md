@@ -14,14 +14,14 @@
 - **Building:** crafting, a day–night cycle, sound, and lanterns.
 - **Campaign:** desk study, remote sensing, mapping (compass-clinometer), geochemistry with QA/QC, geophysics, drilling, a JORC-style resource estimate, feasibility, EIA/CDA and mining lease, mining, processing, and closure.
 - **Controls:** keyboard and mouse, PS4 controller (Bluetooth), and phone or tablet touch controls.
-- **Multiplayer:** two-player split screen on one device.
+- **Multiplayer:** two-player split screen on one device, or **online play**: two players on two devices in the same world (room code, direct link with a relay fallback, chat).
 - **Accounts:** players register and sign in. The superadmin approves players and manages accounts.
 - **Narration:** the superadmin's recorded voice guides players, and live commentary works too.
 
 ## How this repository works
 
 ```
-index.html            ← the whole game (same file as Index.html in Apps Script)
+index.html            ← a small loader: it downloads the newest game from your Apps Script every time
 config.js             ← your Apps Script web-app link goes here
 manifest.webmanifest  ← lets players install Terraforge on phones/tablets
 icons/  og-image.jpg  docs/
@@ -29,7 +29,9 @@ apps-script/Code.gs   ← the server (accounts, saves, voice) — runs in Google
 apps-script/Index.html
 ```
 
-GitHub Pages hosts the game. Google Apps Script stores the accounts, worlds and voice clips in your Google Drive. Both links share the same data.
+GitHub Pages gives the game a clean link. **The game itself lives in Google Apps Script**: the GitHub page downloads the latest version from there each time it opens. Apps Script also stores the accounts, worlds and voice clips in your Google Drive. Both links share the same data.
+
+The last version is kept on each device, so the game still opens on a weak connection.
 
 ## Set up (about 10 minutes)
 
@@ -75,10 +77,12 @@ Open your GitHub link and **register with the superadmin username first**. After
 
 ## Updating the game later
 
-1. Replace `index.html` in this repository with the new `Index.html`, renamed to `index.html`. Also update the copies in `apps-script/`.
-2. If `Code.gs` changed, paste it into Apps Script and deploy a **New version**. Your `/exec` link stays the same.
+**You never need to touch GitHub again.** Update the game in Apps Script only:
 
-GitHub Pages refreshes within a minute or two. Players may need to reload the page.
+1. Paste the new `Index.html` (and `Code.gs`, if it changed) into your Apps Script project.
+2. Click **Deploy → Manage deployments → ✏️ → Version: New version → Deploy**. Your `/exec` link stays the same.
+
+Everyone who opens the GitHub link gets the new version straight away. The `apps-script/` folder in this repository is only a backup copy and is not used by the website.
 
 ## Notes
 
