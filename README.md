@@ -50,7 +50,7 @@ The last version is kept on each device, so the game still opens on a weak conne
 
 1. On GitHub, create a new **public** repository, for example `terraforge`.
 2. Click **Add file → Upload files** and drag in **everything in this folder**, including the `.nojekyll` file. Then click **Commit changes**.
-3. Open `config.js` on GitHub, click ✏️ **Edit**, and paste your `/exec` link between the quotes:
+3. `config.js` already contains your `/exec` link. If you ever make a **brand-new** deployment (new link), open `config.js` on GitHub, click ✏️ **Edit**, and paste the new link between the quotes:
    ```js
    window.TERRAFORGE_API = 'https://script.google.com/macros/s/XXXXXXXX/exec';
    ```
